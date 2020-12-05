@@ -34,9 +34,9 @@
     <link href="https://blog.520517.xyz/2020/12/05/9daba997.html"/>
     <id>https://blog.520517.xyz/2020/12/05/9daba997.html</id>
     <published>2020-12-05T04:24:12.000Z</published>
-    <updated>2020-12-05T04:25:55.571Z</updated>
+    <updated>2020-12-05T06:08:13.091Z</updated>
     
-    <content type="html"><![CDATA[<p>123零秒楼上快递费浪费啊</p><h1 id="阿莎"><a href="#阿莎" class="headerlink" title="阿莎"></a>阿莎</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1>]]></content>
     
     
     <summary type="html">描述这是测试</summary>
@@ -49,6 +49,54 @@
     <category term="测试" scheme="https://blog.520517.xyz/tags/%E6%B5%8B%E8%AF%95/"/>
     
     <category term="第一次" scheme="https://blog.520517.xyz/tags/%E7%AC%AC%E4%B8%80%E6%AC%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringMvc</title>
+    <link href="https://blog.520517.xyz/2020/12/05/9daba997.html"/>
+    <id>https://blog.520517.xyz/2020/12/05/9daba997.html</id>
+    <published>2020-12-05T04:24:12.000Z</published>
+    <updated>2020-12-05T06:12:21.160Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="SpringMvc"><a href="#SpringMvc" class="headerlink" title="SpringMvc"></a>SpringMvc</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">SpringMvc</span><br><span class="line"><span class="number">1.</span>介绍springMVC</span><br><span class="line">    springMVC处理流程:客户端发送请求 到前端控制器(DispatcherServlet) </span><br><span class="line">    请求发送给处理器(Handler) 处理器做出响应 返回处理 结果给前端控制器 前端控制器将处理结果转发给JSP页面 Jsp</span><br><span class="line">    响应HTML页面给控制器 控制器响应给客户端 </span><br><span class="line">    </span><br><span class="line"><span class="number">2.</span>入门程序</span><br><span class="line">    <span class="number">1.</span>导入jar包 引入</span><br><span class="line">    <span class="number">2.</span>创建配置文件springmvc.xml  配置扫描controller包 头文件springframework</span><br><span class="line">        开启扫描&lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">&quot;com.xu.controller&quot;</span>&gt;</span><br><span class="line">        在web.xml配置springMVC前端控制器 </span><br><span class="line">   </span><br><span class="line">    &lt;servlet&gt;</span><br><span class="line">             &lt;servlet-name&gt;名字&lt;/servlet-name&gt;</span><br><span class="line">             &lt;!--在view层找到控制器--&gt;</span><br><span class="line">             &lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">servlet</span>.<span class="title">DispatcherServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt; </span></span><br><span class="line"><span class="class">             &lt;!--指定<span class="title">springmvc</span>配置文件 核心配置文件读取<span class="title">spring</span>配置文件 不能更改 读取--&gt;</span></span><br><span class="line"><span class="class">             &lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">                  &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">contextConfigLocation</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;不</span></span><br><span class="line">                  &lt;param-value&gt;classpath:springmvc.xml&lt;/param-value&gt;</span><br><span class="line">             &lt;/init-param&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line">                </span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">             &lt;servlet-name&gt;名字&lt;/servlet-name&gt;</span><br><span class="line">             &lt;url-pattern&gt;*.action&lt;/url-pattern&gt; 访问*下所有的.action</span><br><span class="line">    &lt;/servlet-mapping&gt;    </span><br><span class="line">   </span><br><span class="line"><span class="number">3.</span>创建jsp页面 导入标准标签库 创建包 编写实体类 编写controller层</span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span>SpringMVC和mybatis</span><br><span class="line">    spring不需要和spingmvc整合 因为有包含关系</span><br><span class="line"><span class="number">5.</span>tomcat测试 </span><br><span class="line">      </span><br><span class="line">       </span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">SpringMvc</summary>
+    
+    
+    
+    <category term="java" scheme="https://blog.520517.xyz/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://blog.520517.xyz/tags/java/"/>
+    
+    <category term="框架" scheme="https://blog.520517.xyz/tags/%E6%A1%86%E6%9E%B6/"/>
+    
+    <category term="SpringMVC" scheme="https://blog.520517.xyz/tags/SpringMVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用注解</title>
+    <link href="https://blog.520517.xyz/2020/12/05/9daba997.html"/>
+    <id>https://blog.520517.xyz/2020/12/05/9daba997.html</id>
+    <published>2020-12-05T04:24:12.000Z</published>
+    <updated>2020-12-05T06:08:34.954Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="常用注解说明"><a href="#常用注解说明" class="headerlink" title="常用注解说明"></a>常用注解说明</h1><p>Spring纯注解开发，只是将xml配置项移到注解配置，我们只需要将xml和注解一一对应迁移即可</p><table><thead><tr><th>注解</th><th>对应XML标签</th><th>说明</th></tr></thead><tbody><tr><td><code>表示此类交给SpringIOC容器管理注解</code></td><td></td><td></td></tr><tr><td>@Component</td><td><bean/></td><td>表示此类交给SpringIOC容器管理</td></tr><tr><td>@Controller</td><td><bean/></td><td>组合注解（组合了@Component注解），应用在MVC层（控制层）,DispatcherServlet会自动扫描注解了此注解的类，然后将web请求映射到注解了@RequestMapping的方法上。</td></tr><tr><td>@Service</td><td><bean/></td><td>组合注解（组合了@Component注解），应用在service层（业务逻辑层）</td></tr><tr><td>@Reponsitory</td><td><bean/></td><td>组合注解（组合了@Component注解），应用在dao层（数据访问层）</td></tr><tr><td>@Scope</td><td><bean scope=""/></td><td>配合以上四个注解，指定被管理类的生命周期<code>singleton</code>,<code>prototype</code>等</td></tr><tr><td><code>表示从IOC容器中获取Bean注解</code></td><td></td><td></td></tr><tr><td>@Autowired</td><td><property/></td><td>Spring提供的工具（由Spring的依赖注入工具（BeanPostProcessor、BeanFactoryPostProcessor）根据类型自动注入。）</td></tr><tr><td>@Qualifier</td><td>/</td><td><code>@Autowired</code>的辅助注解，帮助确认唯一Bean</td></tr><tr><td>@Resource</td><td><property/></td><td>JSR-250提供的注解，注入属性使用，<code>JDK11删除</code>不建议使用</td></tr><tr><td><code>以下是迁移配置文件，在配置类中使用的注解</code></td><td></td><td></td></tr><tr><td>@Configuration</td><td>/</td><td>声明当前类是一个配置类（相当于一个Spring配置的xml文件）</td></tr><tr><td>@ComponentScan</td><td><a href="context:component-scan/">context:component-scan/</a></td><td>自动扫描指定包下所有使用@Service,@Component,@Controller,@Repository的类并注册</td></tr><tr><td>@PropertySource</td><td><a href="context:property-placeholder/">context:property-placeholder/</a></td><td>指定引入外部属性资源文件</td></tr><tr><td>@Value</td><td>/</td><td>指定从外部资源文件获取数据<code>@Value(&quot;$&#123;jdbc.url&#125;&quot;)</code></td></tr><tr><td>@Import</td><td><import/></td><td>指定引入其他配置类</td></tr><tr><td>@Bean</td><td><bean/></td><td>注解在方法上，声明当前方法的返回值为一个Bean。返回的Bean对应的类中可以定义init()方法和destroy()方法，然后在@Bean(initMethod=“init”,destroyMethod=“destroy”)定义，在构造之后执行init，在销毁之前执行destroy。</td></tr></tbody></table><p><strong>@Configuration：（构造）</strong><br>作用：指定当前类是一个配置类<br>细节：当配置类作为AnnotationConfigApplicationContext对象创建的参数时，该注解可以不写。<br>在test测试类中获取核心容器。</p><p><strong>@ComponentScans</strong>:可以配置多个@ComponentScan<br><strong>@ComponentScan</strong>：（扫描组件）<br>作用：用于通过注解指定spring在创建容器时要扫描的包<br>属性：<br>value：它和basePackages的作用是一样的，都是用于指定创建容器时要扫描的包。</p><p><strong>@Bean：</strong><br>作用：用于把当前方法的返回值作为bean对象存入spring的ioc容器中<br>属性:<br>name:用于指定bean的id。当不写时，默认值是当前方法的名称<br>细节：<br>当我们使用注解配置方法时，如果方法有参数，spring框架会去容器中查找有没有可用的bean对象。<br>查找的方式和Autowired注解的作用是一样的</p><p><strong>@Import (引入)</strong><br>作用：,当子配置类不写@Configuration注释时，Import可以导入其配置类<br>属性：<br>value：用于指定其他配置类的字节码。<br>当我们使用Import的注解之后，有Import注解的类就父配置类，而导入的都是子配置类(更合理清晰)</p><p><strong>@PropertySource：(文件来源)</strong><br>作用：用于指定properties文件的位置<br>属性：<br>value：指定文件的名称和路径。<br>关键字：classpath，表示类路径下</p><p>当有多个类型相同匹配的注入时**@Qualifier:（取得资格的）**用在方法参数上，可以确定选用哪一条注入，此时可以单独使用。</p>]]></content>
+    
+    
+    <summary type="html">常用注解说明</summary>
+    
+    
+    
+    <category term="java" scheme="https://blog.520517.xyz/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://blog.520517.xyz/tags/java/"/>
+    
+    <category term="注解" scheme="https://blog.520517.xyz/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
