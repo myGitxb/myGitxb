@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.520517.xyz/2020/12/05/9daba997.html</loc>
+    <loc>https://blog.520517.xyz/2020/12/06/d7caec1b.html</loc>
     
     <lastmod>2020-12-05</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.520517.xyz/2020/12/05/9daba997.html</loc>
+    <loc>https://blog.520517.xyz/2020/12/06/ae0f95e0.html</loc>
     
     <lastmod>2020-12-05</lastmod>
     
@@ -81,20 +81,6 @@
   </url>
   
   <url>
-    <loc>https://blog.520517.xyz/tags/%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2020-12-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.520517.xyz/tags/SpringMVC/</loc>
-    <lastmod>2020-12-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.520517.xyz/tags/%E6%B3%A8%E8%A7%A3/</loc>
     <lastmod>2020-12-05</lastmod>
     <changefreq>daily</changefreq>
@@ -102,7 +88,7 @@
   </url>
   
   <url>
-    <loc>https://blog.520517.xyz/tags/se/</loc>
+    <loc>https://blog.520517.xyz/tags/srping/</loc>
     <lastmod>2020-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -112,6 +98,20 @@
   
   <url>
     <loc>https://blog.520517.xyz/categories/java/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.520517.xyz/categories/javaee/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.520517.xyz/categories/javase/</loc>
     <lastmod>2020-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
