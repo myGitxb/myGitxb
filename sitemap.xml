@@ -16,6 +16,13 @@
   </url>
   
   <url>
+    <loc>https://blog.520517.xyz/2020/12/05/9daba997.html</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.520517.xyz/link/index.html</loc>
     
     <lastmod>2020-12-04</lastmod>
@@ -89,6 +96,13 @@
   
   <url>
     <loc>https://blog.520517.xyz/tags/%E6%B3%A8%E8%A7%A3/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.520517.xyz/tags/se/</loc>
     <lastmod>2020-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
