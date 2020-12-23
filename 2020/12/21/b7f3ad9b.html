@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://api.mtyqx.cn/api/random.php?">
 <meta property="article:published_time" content="2020-12-21T12:43:06.000Z">
-<meta property="article:modified_time" content="2020-12-23T01:46:56.805Z">
+<meta property="article:modified_time" content="2020-12-23T04:06:30.504Z">
 <meta property="article:author" content="Leng Leng">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://api.mtyqx.cn/api/random.php?"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.520517.xyz/2020/12/21/b7f3ad9b"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/my-zhb/CDN/blog/css/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
@@ -78,7 +78,7 @@ var saveToLocal = {
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2020-12-23 09:46:56'
+  postUpdate: '2020-12-23 12:06:30'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -161,8 +161,6 @@ if (asideStatus !== undefined) {
 <p>Final是修饰符，修饰类，方法和变量，被final修饰的类不能被继承，方法不能被重写，变量为常量。<br>Finally是异常处理的一部分，最终会执行。<br>Finalize是object类中的一个方法，用于垃圾回收。</p>
 <h2 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h2><p>object多少种方法？    11种</p>
 <p>hashCode：返回该对象的哈希码值。<br>getClass():返回此 Object的运行时类。<br>finalize()：垃圾回收。<br>clone()：创建并返回此对象的一个副本。<br>equals():指示其他某个对象是否与此对象“相等”。<br>toString():返回该对象的字符串表示。<br>。。。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>集合框架划分几种？    单列，双列</p>
 <p>单列：Collection–Set–List<br>双列：Map</p>
 <p>arraylist数组特点？    底层数据结构是数组，查询快，增删慢。线程不安全，效率高。</p>
@@ -186,8 +184,6 @@ if (asideStatus !== undefined) {
 <p>分布式锁的实现方式？    有三种：基于数据库实现分布式锁、基于缓存（redis、memcached、tair）实现分布式锁、基于Zookeeper实现分布式锁</p>
 <p>你对多线程的了解？</p>
 <p>（微服务项目就是多线程项目）多线程了解过一些，但是我们在项目开发工程中很少用到，了解多少说多少，多线程会遇到线程安全的问题，一种可见性，原子性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p>简单工厂模式<br>工厂方法模式<br>单例设计模式<br>模版设计模式<br>装饰设计模式<br>适配器设计模式<br>代理模式</p>
 <h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p>解析xml的方式?    1、DOM方式    2、Dom4j方式    3、JDom方式    4、SAX方式</p>
 <p>反射+xml解析，占框架底层原理二分之一</p>
@@ -216,8 +212,6 @@ if (asideStatus !== undefined) {
 <p>1、使用!= 或者 &lt;&gt; 导致索引失效<br>2、类型不一致导致的索引失效<br>3、函数导致的索引失效<br>4、OR引起的索引失效（特殊情况下：即不是同一个索引字段）<br>5、模糊搜索导致的索引失效</p>
 <p>mysql和oracle的区别？</p>
 <p>Mysql的主键一般是自动增长类型，oracle没有自动增长，一般使用的是序列。<br>Mysql对事务提交的方式默认是自动提交，而oracle默认不自动提交，需要手动提交。(写commit指令或者点击commit按钮)。<br>事务隔离级别不同：mysql为read commited，而oracle是repeatable read的隔离级别。<br>Mysql的分页查询通过limit关键字就可以实现分页，而oracle则是需要用rownumber。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>常见数据类型？    String、hash、list、set、zset</p>
 <p>缓存原理？（不清楚是不是这个答案）</p>
 <p>Redis是key-value形式的nosql数据库。可以快速的定位到所查找的key，并把其中的value取出来。并且Redis的所有的数据都是放到内存中，存取的速度非常快，一般都是用来做缓存使用。</p>
@@ -239,8 +233,6 @@ if (asideStatus !== undefined) {
 <p>Mongodb主要存储得数据结构格式为单一数据，比如json格式的数据；而redis的数据结构是一个大Map，我们根据不同的业务需求去选择使用什么样的数据库。</p>
 <p>如何保证redis的缓存和数据库的一致性 双写一致性?</p>
 <p>先保存数据库还是先操作redis或者是先操作redis再操作数据库等很多方案，其实都是各有道理的一个效果。比较简单的一种，其实他最终出现不一直性的效果还是比较少的。一般做法是download数据库，数据库的数据发生变化以后，首先存一下数据库，然后就把redis里面的数据删除，删除以后下次来访问的时候就会发现redis里面没有，就会去查数据库。用的就是先更新数据库，再删缓存。这个方案也并不是十全十美的，但是没有十全十美的方案，这是以业务作为出发点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h1 id="JavaWeb"><a href="#JavaWeb" class="headerlink" title="JavaWeb"></a>JavaWeb</h1><h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><p>四大域对象（作用域）？</p>
 <p>pageContext：jsp中有效 page域就是指pageContext<br>request：一次请求  request域 HttpServletRequest<br>session：一次会话  session域 HttpSession<br>application：当前web应用  application域  ServletContext</p>
 <p>九大内置对象？</p>
@@ -253,8 +245,6 @@ if (asideStatus !== undefined) {
 <p>作用：用于简化和替换jsp页面上的java代码</p>
 <p>JSTL常用标签？</p>
 <p>1、if:相当于java代码的if语句<br>2、choose:相当于java代码的switch语句<br>        1、使用choose标签声明                                相当于switch声明<br>        2、使用when标签做判断                                相当于case<br>        3、使用otherwise标签做其他情况的声明       相当于default<br>3、foreach:相当于java代码的for语句</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>Servlet：运行在服务器端的小程序。Servlet就是一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则。（了解）</p>
 <p>forward（转发）和redirect（重定向）的区别？</p>
 <p>重定向特点：</p>
@@ -306,8 +296,6 @@ if (asideStatus !== undefined) {
 <p>1、SpringMVC的入口是一个servlet即前端控制器（DispatchServlet），而struts2入口是一个filter过虑器。<br>2、SpringMVC是基于方法开发可以设计为单例或多例(建议单例)，struts2是基于类开发，只能设计为多例。<br>3、Struts采用栈存储请求和响应的数据，SpringMVC通过参数解析器解析</p>
 <p>拦截器和过滤器的区别？</p>
 <p>过滤器是servlet规范中的一部分，任何javaweb工程都可以使用，拦截器是springMVC框架自己的，只有使用了springMVC的框架才能用。拦截范围过滤器是在配置文件中url-pattern中配置了/*之后，可以对所有要访问的资源进行拦截，拦截器只会拦截控制器方法，静态资源是不会进行拦截的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><p>什么是SpringBoot？</p>
 <p>1、用来简化spring应用的初始搭建以及开发过程 使用特定的方式来进行配置（properties 或 yml 文件）<br>2、创建独立的spring引用程序main方法运行<br>3、嵌入的Tomcat无需部署war文件<br>4、简化maven配置<br>5、自动配置spring添加对应功能starter自动化配置</p>
 <p>常用注解</p>
@@ -323,8 +311,6 @@ if (asideStatus !== undefined) {
 <p>1、@Autowired注入<br>2、构造方法注入<br>3、@Bean方法的参数注入<br>4、在需要的方法上使用 @ConfigurationProperties</p>
 <p>ssm和ssm+springBoot有什么区别？</p>
 <p>前置需要进行大量的xml配置，而再加入springBoot之后，springBoot的注解@EnableAutoConfiguration代替了大量的xml配置。那么原本需要配置的Bean实例交给springBoot管理。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h2 id="SpringCloud"><a href="#SpringCloud" class="headerlink" title="SpringCloud"></a>SpringCloud</h2><p>SpringCloud核心组件：Eureka，Ribbon，Feign，Hystrix，Zuul</p>
 <h3 id="1-0-Eureka"><a href="#1-0-Eureka" class="headerlink" title="1.0 Eureka"></a>1.0 Eureka</h3><p>作用：实现服务治理（服务注册与发现）</p>
 <p>如何实现服务注册？</p>
@@ -341,8 +327,6 @@ if (asideStatus !== undefined) {
 <p>原因是事务控制的底层原理是为服务提供者类创建代理对象，而默认情况下Spring是基于JDK动态代理方式创建代理对象。开启事务控制注解支持时指定proxy-target-class属性，值为true就可以了。</p>
 <p>Spring cloud和dubbo的区别？</p>
 <p>SpringCloud是Apache下的Spring体系下的为服务解决方案，Dubbo是阿里系统中分布式微服务治理框架。<br>Dubbo基于TCP协议传输的，完成RPC通信。而SpringCloud是基于Http协议+rest接口调用远程过程的通信。相对来说，Http请求会有更大的报文，占的带宽也会更多，但是REST相比RPC更为灵活。<br>Springcloud的功能比dubbo强大，dubbo只实现了服务治理，但是springcloud提供了很多功能。<br>Dubbo使用Zookeeper作为注册中心，实现服务的注册和发现，SpringCloud不仅可以使用Eureka作为注册中心，也可以使用Zookeeper作为注册中心。<br>Dubbo没有实现网关功能，需要第三方技术去整合，但是SpringCloud有zuul网关，对请求进行负载均衡和分发，提供熔断器，而且和git完美集成。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
 <h1 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h1><h2 id="RabbitMQ"><a href="#RabbitMQ" class="headerlink" title="RabbitMQ"></a>RabbitMQ</h2><p>消息中间件模式分类？    </p>
 <p>点对点    PTP：使用queue作为通信载体。<br>发布/订阅（广播）Pub/Sub：使用topic作为通信载体。</p>
 <p>为什么要使用 RabbitMQ？Rabbit 有什么优点？</p>
