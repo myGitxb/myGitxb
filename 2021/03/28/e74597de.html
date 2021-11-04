@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SpringCloud阶段总结 | 冷冷</title><meta name="keywords" content="面试题"><meta name="author" content="Leng Leng"><meta name="copyright" content="Leng Leng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="介绍 SpringCloud是什么？SpringCloud是依附于SpringBoot的一系列实用框架的集合，俗称微服务“全家桶”。 核心组件：**&#96;Eureka&#96;,&#96;Ribbon&#96;,&#96;Feign&#96;,&#96;Hystrix&#96;,&#96;Zuul&#96;**。 &#96;Eureka&#96;：提供服务注册功能。 &#96;Ribbon&#96;：提供负载均衡功能。 &#96;Feign&#96;：提供远程调用功能。 &#96;Hystrix&#96;：提供线程熔断功能。 &#96;Zuu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud阶段总结">
+<meta property="og:url" content="https://www.520517.xyz/2021/03/28/e74597de.html">
+<meta property="og:site_name" content="冷冷">
+<meta property="og:description" content="介绍 SpringCloud是什么？SpringCloud是依附于SpringBoot的一系列实用框架的集合，俗称微服务“全家桶”。 核心组件：**&#96;Eureka&#96;,&#96;Ribbon&#96;,&#96;Feign&#96;,&#96;Hystrix&#96;,&#96;Zuul&#96;**。 &#96;Eureka&#96;：提供服务注册功能。 &#96;Ribbon&#96;：提供负载均衡功能。 &#96;Feign&#96;：提供远程调用功能。 &#96;Hystrix&#96;：提供线程熔断功能。 &#96;Zuu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://api.mtyqx.cn/api/random.php?13">
+<meta property="article:published_time" content="2021-03-28T15:18:04.000Z">
+<meta property="article:modified_time" content="2021-10-30T00:57:06.220Z">
+<meta property="article:author" content="Leng Leng">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://api.mtyqx.cn/api/random.php?13"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.520517.xyz/2021/03/28/e74597de"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/my-zhb/CDN/blog/css/main.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Leng Leng","link":"链接: ","source":"来源: 冷冷","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"10px"},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-30 08:57:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script><script>window.FPConfig={delay:0.5,ignoreKeywords:[],maxRPS:3,hoverDelay:50};</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="冷冷" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/myGitxb/picpigo/img/20201205124619.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">90</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-bookmark"></i><span> 文章</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(http://api.mtyqx.cn/api/random.php?13)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">冷冷</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-bookmark"></i><span> 文章</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">SpringCloud阶段总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label"></span><time datetime="2021-03-28T15:18:04.000Z" title="undefined 2021-03-28 23:18:04">2021-03-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a><font color=brown>介绍</font></h2><ol>
+<li><h3 id="SpringCloud是什么？"><a href="#SpringCloud是什么？" class="headerlink" title="SpringCloud是什么？"></a>SpringCloud是什么？</h3><p>SpringCloud是依附于SpringBoot的一系列实用框架的集合，俗称微服务“全家桶”。</p>
+<pre><code>核心组件：**`Eureka`,`Ribbon`,`Feign`,`Hystrix`,`Zuul`**。
+`Eureka`：提供服务注册功能。
+`Ribbon`：提供负载均衡功能。
+`Feign`：提供远程调用功能。
+`Hystrix`：提供线程熔断功能。
+`Zuul`：提供统一网关功能。![在这里插入图片描述](https://cdn.jsdelivr.net/gh/myGitxb/picpigo/img/20210328232211.png)</code></pre>
+</li>
+</ol>
+<h2 id="red-circle-Eureka"><a href="#red-circle-Eureka" class="headerlink" title=":red_circle: Eureka"></a>:red_circle: <font color=brown>Eureka</font></h2><blockquote>
+<p>Eureka是Netflix公司的一个服务发现组件，包含注册中心（Eureka Server）和eureka客户端，<br>主要功能是实现服务治理（服务的注册与发现）。</p>
+</blockquote>
+<p><strong>服务注册中心</strong>：Eureka客户端会把自身服务注册到注册中心，为其他Eureka客户端提供服务，Eureka客户端通过注册中心相互发现对应服务并进行调用。</p>
+<p><strong>Eureka客户端</strong>：相对注册中心而言，所有注册到服务注册中心的服务都可以表述为Eureka客户端；但是站在提供方和消费方的角度看，Eureka客户端又可以称之为服务端。</p>
+<h4 id="如何判断服务可用？"><a href="#如何判断服务可用？" class="headerlink" title="如何判断服务可用？"></a>如何判断服务可用？</h4><p>Eureka通过<code>心跳</code>来判断服务是否可用。客户端通过轮询算法向所有服务器发送心跳，如果服务器多个心跳周期未收到心跳，就会把这个节点从服务列表移除，这也可以称为服务续约。</p>
+<h4 id="如何创建集群？"><a href="#如何创建集群？" class="headerlink" title="如何创建集群？"></a>如何创建集群？</h4><p>修改yml配置文件里的<code>defaultZone</code>，配置多个注册中心地址即可在多个注册中心注册。</p>
+<h4 id="star-Eureka和ZooKeeper的区别？"><a href="#star-Eureka和ZooKeeper的区别？" class="headerlink" title=":star:Eureka和ZooKeeper的区别？"></a>:star:Eureka和ZooKeeper的区别？</h4><ul>
+<li><p><strong>设计原则不同</strong></p>
+<p>分布式系统有一个<code>CAP原则</code>，就是一致性、可用性、分区容错性只能同时保持2个。</p>
+<p>Eureka遵循的是<code>AP</code>原则，即放弃强一致性，保证可用性和分区容忍性；</p>
+<p>ZooKeeper遵循的是<code>CP</code>原则，即强调一致性和分区容忍性，放弃对可用性的维持，性能稍低。</p>
+</li>
+<li><p><strong>节点地位不同</strong></p>
+<p>Eureka各个节点平等，保证了服务可用性，数据不一定是最新的；</p>
+<p>ZooKeeper有Leader和Follower角色，在选取期间服务不可用，可用性略低。</p>
+</li>
+<li><p><strong>保护机制不同</strong></p>
+<p>Eureka采用自我保护机制解决分区问题；ZooKeeper采用过半数存活原则。</p>
+</li>
+<li><p><strong>本质不同</strong></p>
+<p>Eureka本质上是一个工程,而ZooKeeper只是一个进程。</p>
+</li>
+</ul>
+<h2 id="red-circle-Zookeeper"><a href="#red-circle-Zookeeper" class="headerlink" title=":red_circle: Zookeeper"></a>:red_circle: <font color=brown>Zookeeper</font></h2><blockquote>
+<p>Zookeeper是一个分布式协调工具，可以实现注册中心功能。</p>
+</blockquote>
+<p>使用方式与Eureka大同小异。</p>
+<h2 id="red-circle-Ribbon"><a href="#red-circle-Ribbon" class="headerlink" title=":red_circle:Ribbon"></a>:red_circle:<font color=brown>Ribbon</font></h2><blockquote>
+<p>Ribbon是Netflix公司的一个基于HTTP和TCP等协议负载均衡的组件。<br>为Ribbon配置服务提供者地址后，Ribbon就可基于某种负载均衡算法，自动地帮助服务消费者去请求。</p>
+</blockquote>
+<h4 id="什么是负载均衡？有哪些方式？"><a href="#什么是负载均衡？有哪些方式？" class="headerlink" title="什么是负载均衡？有哪些方式？"></a>什么是负载均衡？有哪些方式？</h4><p>负载均衡（<em>Load Balance</em>），顾名思义，就是为了均衡负载。其中分为<code>集中式LB</code>和<code>进程内LB</code>，</p>
+<ul>
+<li><p><strong>集中式LB</strong></p>
+<p>在服务的消费方和提供方之间使用独立的LB设施(可以是硬件，如<code>F5</code>, 也可以是软件，如<code>nginx</code>), 由该设施负责把访问请求通过某种策略转发至服务的提供方；</p>
+</li>
+<li><p><strong>进程内LB</strong></p>
+<p>将LB逻辑集成到消费方，消费方从服务注册中心获知有哪些地址可用，然后自己再从这些地址中选择出一个合适的服务器。</p>
+</li>
+</ul>
+<p>Ribbon就属于进程内LB，它只是一个类库，集成于消费方进程，消费方通过它来获取到服务提供方的地址。</p>
+<h4 id="Ribbon的负载算法有哪些？"><a href="#Ribbon的负载算法有哪些？" class="headerlink" title="Ribbon的负载算法有哪些？"></a>Ribbon的负载算法有哪些？</h4><p>Ribbon负载算法默认是轮询算法，其他还有随机分配、设置权重、根据性能分配等等方式，具体这一块了解的不是太多。</p>
+<ul>
+<li><code>RoundRobinRule</code>： 默认轮询的方式</li>
+<li><code>RandomRule</code>： 随机方式</li>
+<li><code>WeightedResponseTimeRule</code>： 根据响应时间来分配权重的方式，响应的越快，分配的值越大。</li>
+<li><code>BestAvailableRule</code>： 选择并发量最小的方式</li>
+<li><code>RetryRule</code>： 在一个配置时间段内当选择server不成功，则一直尝试使用subRule的方式选择一个可用的server</li>
+<li><code>ZoneAvoidanceRule</code>： 根据性能和可用性来选择。</li>
+<li><code>AvailabilityFilteringRule</code>： 过滤掉那些因为一直连接失败的被标记为circuit tripped的后端server，并过滤掉那些高并发的的后端server（active connections 超过配置的阈值）</li>
+</ul>
+<h2 id="red-circle-Feign"><a href="#red-circle-Feign" class="headerlink" title=":red_circle: Feign"></a>:red_circle: <font color=brown>Feign</font></h2><blockquote>
+<p>Feign是一个声明式的web service客户端，它让微服务之间的调用变得更简单了，就如同controller去调用service一样的简单。<br>Feign内置了Ribbon，自带负载均衡的功能。</p>
+</blockquote>
+<p>Feign的使用采用接口的方式，创建一个接口，在上面添加<code>@FeignClient</code>的注解，然后将需要调用的其他服务的方法定义成抽象方法即可，然后就可以像调用自身工程的方法一样去调用。</p>
+<p>Feign本身不支持Spring MVC的注解，它有一套自己的注解。</p>
+<h2 id="red-circle-OpenFeign"><a href="#red-circle-OpenFeign" class="headerlink" title=":red_circle: OpenFeign"></a>:red_circle: <font color=brown>OpenFeign</font></h2><blockquote>
+<p>OpenFeign是Spring Cloud 在Feign的基础上支持了Spring MVC的注解，如<code>@RequesMapping</code>等等。<br>OpenFeign的<code>@FeignClient</code>可以解析SpringMVC的@RequestMapping注解下的接口，并通过动态代理的方式产生实现类，实现类中做负载均衡并调用其他服务。</p>
+</blockquote>
+<p>使用方法是主启动类增加 <code>@EnableFeignClients</code> 注解，</p>
+<p>然后在业务上面直接标注如：<code>@FeignClient(name = “user-center”)</code></p>
+<h4 id="star-Ribbon和Feign的区别？"><a href="#star-Ribbon和Feign的区别？" class="headerlink" title=":star:Ribbon和Feign的区别？"></a>:star:Ribbon和Feign的区别？</h4><ol>
+<li>Ribbon和Feign都是调用其他服务的，但方式不同。</li>
+<li>启动类注解不同，Ribbon是@RibbonClient feign的是@EnableFeignClients</li>
+<li>服务指定的位置不同，Ribbon是在@RibbonClient注解上声明，Feign则是在定义抽象方法的接口中使用@FeignClient声明。</li>
+<li>调用方式不同，Ribbon需要自己构建http请求，模拟http请求然后使用RestTemplate发送给其他服务，步骤相当繁琐。Feign需要将调用的方法定义成抽象方法即可。</li>
+</ol>
+<h2 id="red-circle-Hystrix"><a href="#red-circle-Hystrix" class="headerlink" title=":red_circle: Hystrix"></a>:red_circle: <font color=brown>Hystrix</font></h2><blockquote>
+<p>Hystrix是一个断路器。Hystrix能够保证在一个依赖出问题的情况下，不会导致整个服务失败，避免级联故障，以提高分布式系统的弹性。<br>当失败的调用到一定阈值，缺省是5秒内20次调用失败，就会启动熔断机制。</p>
+</blockquote>
+<p>“断路器”本身是一种开关设置，当某个服务单元发生故障之后，通过断路器的故障监控（类似熔断保险丝），向调用方返回一个符合预期的，可处理的备选响应（<code>FallBack</code>），而不是长时间的等待或者抛出服务方无法处理的异常，这样就保证服务方调用线程不会被长时间、不必要的占用，从而避免故障在在分布式系统中的绵延，乃至雪崩。</p>
+<p>一个服务失败，导致整条链路的服务都失败的情形，我们称之为<code>服务雪崩</code>。</p>
+<h4 id="服务降级"><a href="#服务降级" class="headerlink" title="服务降级"></a>服务降级</h4><blockquote>
+<p>服务器忙，请稍后再试，返回一个友好提示，fallback，或者启动备用方案</p>
+</blockquote>
+<h4 id="服务熔断"><a href="#服务熔断" class="headerlink" title="服务熔断"></a>服务熔断</h4><blockquote>
+<p>保险丝达到最大服务访问后，拉闸限电，然后调用服务降级的方法并返回友好提示</p>
+</blockquote>
+<h4 id="服务限流"><a href="#服务限流" class="headerlink" title="服务限流"></a>服务限流</h4><blockquote>
+<p>秒杀高并发等操作，严禁一窝蜂的过来拥挤，大家排队，一秒钟N个，有序进行</p>
+</blockquote>
+<p>使用方法：主启动类 添加<code>@EnableCircuitBreaker</code>注解，业务类标注如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@HystrixCommand(fallbackMethod = &quot;paymentInfo_TimeOutHandler&quot;,commandProperties = &#123;@HystrixProperty(name = &quot;execution.isolation.thread.timeoutInMilliseconds&quot;,value = &quot;3000&quot;) //3秒钟以内就是正常的业务逻辑</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="解决代码膨胀"><a href="#解决代码膨胀" class="headerlink" title="解决代码膨胀"></a>解决代码膨胀</h5><blockquote>
+<p>@DefaultProperties(defaultFallback = “”) //在controller类上标注，如果配置了兜底方法，就按照自己的来，如果没有的话就按照这里配置的</p>
+</blockquote>
+<h2 id="red-circle-gateway"><a href="#red-circle-gateway" class="headerlink" title=":red_circle: gateway"></a>:red_circle: <font color=brown>gateway</font></h2><blockquote>
+<p>SpringCloud在之前是使用的netflix公司zuul，后来<code>zuul</code>的性能表现不是很理想，而且<code>zuul2.0</code>连续跳票，所以催生了spring团队开发了<code>Gateway</code>项目。Gateway也是作为服务网关的功能而存在。</p>
+</blockquote>
+<p>API网关封装了系统内部架构，为每个客户端提供一个定制的API。</p>
+<p>它可能还具有其它职责，如身份验证、监控、负载均衡、缓存、请求分片与管理、静态响应处理等。API网关方式的核心要点是：所有的客户端和消费端都通过统一的网关接入微服务，在网关层处理所有的非业务功能。通常，网关也是提供REST/HTTP的访问API。</p>
+<h2 id="red-circle-Zuul"><a href="#red-circle-Zuul" class="headerlink" title=":red_circle: Zuul "></a>:red_circle: <font color=brown>Zuul </font></h2><p> 在微服务架构中，通常会有多个服务提供者。设想一个电商系统，可能会有商品、订单、支付、用户等多个类型的服务，而每个类型的服务数量也会随着整个系统体量的增大也会随之增长和变更。作为UI端，在展示页面时可能需要从多个微服务中聚合数据，而且服务的划分位置结构可能会有所改变。网关就可以对外暴露聚合API，屏蔽内部微服务的微小变动，保持整个系统的稳定性。</p>
+<h3 id="Nginx和gateway的区别？"><a href="#Nginx和gateway的区别？" class="headerlink" title="Nginx和gateway的区别？"></a>Nginx和gateway的区别？</h3><ul>
+<li>Nginx适合做那种<strong>门户网关</strong>，是作为整个全局的网关，是对外的，处于最外层的；而Gateway这种，更像是<strong>业务网关</strong>，主要用来对应不同的客户端提供服务的，用于聚合业务的。各个微服务独立部署，职责单一，对外提供服务的时候需要有一个东西把业务聚合起来。</li>
+<li>像Nginx这类网关，都是用不同的语言编写的，不易于扩展；而Gateway就不同，它是用Java写的，易于扩展和维护</li>
+<li>Gateway这类网关可以实现熔断、重试等功能，这是Nginx不具备的</li>
+</ul>
+<h2 id="其它问题"><a href="#其它问题" class="headerlink" title="其它问题"></a><font color=brown>其它问题</font></h2><h3 id="Dubbo是什么？和SpringCloud有什么区别？"><a href="#Dubbo是什么？和SpringCloud有什么区别？" class="headerlink" title="Dubbo是什么？和SpringCloud有什么区别？"></a>Dubbo是什么？和SpringCloud有什么区别？</h3><p>Dubbo也是一种微服务框架，和SpringCloud一样。不过它是使用<code>ZooKeeper</code>作为服务注册中心，通过<code>RPC</code>服务调用方式进行远程调用。<br>SpringCloud使用<code>Eureka</code>来支持服务注册，服务调用方式为<code>REST API</code>。同时还集成了各类其他的类似于balabala…的组件。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Leng Leng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.520517.xyz/2021/03/28/e74597de.html">https://www.520517.xyz/2021/03/28/e74597de.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.520517.xyz" target="_blank">冷冷</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></div><div class="post_share"><div class="social-share" data-image="http://api.mtyqx.cn/api/random.php?13" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/03/28/8ed9d792.html"><img class="prev-cover" data-lazy-src="http://api.mtyqx.cn/api/random.php?11" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">SpringMVC阶段总结</div></div></a></div><div class="next-post pull-right"><a href="/2021/03/28/10afe1f0.html"><img class="next-cover" data-lazy-src="http://api.mtyqx.cn/api/random.php?15" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringBoot阶段总结</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/myGitxb/picpigo/img/20201205124619.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Leng Leng</div><div class="author-info__description">不忘初心，方得始终</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">90</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/myGitxb"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:211711111@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=211711111" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">我是冷冷</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SpringCloud%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">SpringCloud是什么？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#red-circle-Eureka"><span class="toc-number">2.</span> <span class="toc-text">:red_circle: Eureka</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%9C%8D%E5%8A%A1%E5%8F%AF%E7%94%A8%EF%BC%9F"><span class="toc-number">2.0.1.</span> <span class="toc-text">如何判断服务可用？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E9%9B%86%E7%BE%A4%EF%BC%9F"><span class="toc-number">2.0.2.</span> <span class="toc-text">如何创建集群？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#star-Eureka%E5%92%8CZooKeeper%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.0.3.</span> <span class="toc-text">:star:Eureka和ZooKeeper的区别？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#red-circle-Zookeeper"><span class="toc-number">3.</span> <span class="toc-text">:red_circle: Zookeeper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#red-circle-Ribbon"><span class="toc-number">4.</span> <span class="toc-text">:red_circle:Ribbon</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%EF%BC%9F%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="toc-number">4.0.1.</span> <span class="toc-text">什么是负载均衡？有哪些方式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ribbon%E7%9A%84%E8%B4%9F%E8%BD%BD%E7%AE%97%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">4.0.2.</span> <span class="toc-text">Ribbon的负载算法有哪些？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#red-circle-Feign"><span class="toc-number">5.</span> <span class="toc-text">:red_circle: Feign</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#red-circle-OpenFeign"><span class="toc-number">6.</span> <span class="toc-text">:red_circle: OpenFeign</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#star-Ribbon%E5%92%8CFeign%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">6.0.1.</span> <span class="toc-text">:star:Ribbon和Feign的区别？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#red-circle-Hystrix"><span class="toc-number">7.</span> <span class="toc-text">:red_circle: Hystrix</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E9%99%8D%E7%BA%A7"><span class="toc-number">7.0.1.</span> <span class="toc-text">服务降级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%86%94%E6%96%AD"><span class="toc-number">7.0.2.</span> <span class="toc-text">服务熔断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E9%99%90%E6%B5%81"><span class="toc-number">7.0.3.</span> <span class="toc-text">服务限流</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BB%A3%E7%A0%81%E8%86%A8%E8%83%80"><span class="toc-number">7.0.3.1.</span> <span class="toc-text">解决代码膨胀</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#red-circle-gateway"><span class="toc-number">8.</span> <span class="toc-text">:red_circle: gateway</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#red-circle-Zuul"><span class="toc-number">9.</span> <span class="toc-text">:red_circle: Zuul </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E5%92%8Cgateway%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">9.1.</span> <span class="toc-text">Nginx和gateway的区别？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E9%97%AE%E9%A2%98"><span class="toc-number">10.</span> <span class="toc-text">其它问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%92%8CSpringCloud%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">10.1.</span> <span class="toc-text">Dubbo是什么？和SpringCloud有什么区别？</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/03/5976fbd0.html" title="Eureka使用"><img data-lazy-src="http://api.mtyqx.cn/api/random.php?90" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Eureka使用"/></a><div class="content"><a class="title" href="/2021/11/03/5976fbd0.html" title="Eureka使用">Eureka使用</a><time datetime="2021-11-03T08:48:37.000Z" title=" 2021-11-03 16:48:37">2021-11-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/02/dff1e781.html" title="joe博客使用"><img data-lazy-src="http://api.mtyqx.cn/api/random.php?" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="joe博客使用"/></a><div class="content"><a class="title" href="/2021/11/02/dff1e781.html" title="joe博客使用">joe博客使用</a><time datetime="2021-11-02T04:01:21.000Z" title=" 2021-11-02 12:01:21">2021-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/01/94b0d4da.html" title="宝塔面板使用"><img data-lazy-src="http://api.mtyqx.cn/api/random.php?88" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="宝塔面板使用"/></a><div class="content"><a class="title" href="/2021/11/01/94b0d4da.html" title="宝塔面板使用">宝塔面板使用</a><time datetime="2021-11-01T15:07:58.000Z" title=" 2021-11-01 23:07:58">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/01/deba1672.html" title="对象内存图"><img data-lazy-src="http://api.mtyqx.cn/api/random.php?87" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="对象内存图"/></a><div class="content"><a class="title" href="/2021/11/01/deba1672.html" title="对象内存图">对象内存图</a><time datetime="2021-11-01T14:06:06.000Z" title=" 2021-11-01 22:06:06">2021-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/01/9a32718b.html" title="设计类和对象、定义类注意事项"><img data-lazy-src="http://api.mtyqx.cn/api/random.php?86" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="设计类和对象、定义类注意事项"/></a><div class="content"><a class="title" href="/2021/11/01/9a32718b.html" title="设计类和对象、定义类注意事项">设计类和对象、定义类注意事项</a><time datetime="2021-11-01T12:44:58.000Z" title=" 2021-11-01 20:44:58">2021-11-01</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Leng Leng</div><div class="framework-info"><span>框架 </span><a href="https://www.520517.xyz">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://www.520517.xyz/">Butterfly</a></div><div class="icp"><a><img class="icp-icon" src="/img/icp.png" alt="ICP"/><span>豫ICP备20011122号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/gh/my-zhb/CDN/blog/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/my-zhb/CDN/blog/js/utils.min.js"></script><script src="https://cdn.jsdelivr.net/gh/my-zhb/CDN/blog/js/main.min.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script>window.ga_tid='UA-179333436-1';(function(){var dga=document.createElement("script");dga.src="https://rmt.dogedoge.com/fetch/public/ga.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(dga,s)})();</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2009371_z2n39cebnib.css"><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="false"></script></div></body></html>
